@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Magazines</h2>
+  <%- linkTo('Create a new Magazine', addMagazinePath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="magazines-list">
+<% if (magazines) { %>
+<% for (var i = 0, ii = magazines.length; i < ii; i++) { %>
+  <div class="row list-item" id="magazine-<%= magazines[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(magazines[i].title, magazinePath(magazines[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= magazines[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>
